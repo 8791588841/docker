@@ -29,6 +29,9 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
+        registry: https://dockernew93.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_97e9bb3fc0a94a27865c579a66033dc2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_797bc6db268840428c35077b9ca97b17 }}
         push: true
         tags: dockernew93.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_97e9bb3fc0a94a27865c579a66033dc2 }}/docke:${{ github.sha }}
         file: ./Dockerfile
