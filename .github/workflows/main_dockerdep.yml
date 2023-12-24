@@ -31,7 +31,7 @@ jobs:
       with:
         context : .
         push: true
-        tags: dockerregin.azurecr.io/dockerdeploy:latest
+        tags: tags: dockerregin.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_cea35b0551384f8abaf7a6630267cdba }}/dockerdeploy:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
